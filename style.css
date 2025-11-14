@@ -68,6 +68,9 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+
+  /* NEW */
+  animation: app-enter 260ms ease-out;
 }
 
 /* Header */
@@ -331,7 +334,16 @@ body {
     opacity: 1;
   }
 }
-
+@keyframes app-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 /* Sample questions */
 .sample-question {
   display: inline-block;
