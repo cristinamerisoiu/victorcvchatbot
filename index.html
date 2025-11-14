@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Jordan, Beyond the Résumé</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" aria-label="Jordan CV Chat">
+    <header class="header">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">J</div>
+        <div class="titles">
+          <h1 class="title">Jordan, Beyond the Résumé</h1>
+          <p class="subtitle">Static demo · answers in English, Spanish, and French</p>
+        </div>
+      </div>
+      <button id="help-btn" class="help-btn" aria-label="Help" title="Sample questions">?</button>
+    </header>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="help-modal hidden">
+      <div class="help-content">
+        <div class="help-header">
+          <h3>Sample Questions</h3>
+          <button id="close-help" class="close-btn" aria-label="Close">×</button>
+        </div>
+        <div class="help-body">
+          <p class="help-intro">Try asking in English, Spanish or French:</p>
+
+          <h4>English</h4>
+          <button class="sample-question" data-question="Give me a quick overview of her career.">
+            Give me a quick overview of her career.
+          </button>
+          <button class="sample-question" data-question="What are her main strengths?">
+            What are her main strengths?
+          </button>
+          <button class="sample-question" data-question="Which tools does she use?">
+            Which tools does she use?
+          </button>
+          <button class="sample-question" data-question="How does she handle tight deadlines?">
+            How does she handle tight deadlines?
+          </button>
+
+          <h4>Español</h4>
+          <button class="sample-question" data-question="Hazme un resumen rápido de su carrera.">
+            Hazme un resumen rápido de su carrera.
+          </button>
+          <button class="sample-question" data-question="¿Cuáles son sus principales fortalezas?">
+            ¿Cuáles son sus principales fortalezas?
+          </button>
+          <button class="sample-question" data-question="¿Con qué herramientas trabaja normalmente?">
+            ¿Con qué herramientas trabaja normalmente?
+          </button>
+          <button class="sample-question" data-question="¿Cómo gestiona los plazos ajustados?">
+            ¿Cómo gestiona los plazos ajustados?
+          </button>
+
+          <h4>Français</h4>
+          <button class="sample-question" data-question="Fais-moi un résumé rapide de sa carrière.">
+            Fais-moi un résumé rapide de sa carrière.
+          </button>
+          <button class="sample-question" data-question="Quelles sont ses principales forces ?">
+            Quelles sont ses principales forces ?
+          </button>
+          <button class="sample-question" data-question="Avec quels outils travaille-t-elle ?">
+            Avec quels outils travaille-t-elle ?
+          </button>
+          <button class="sample-question" data-question="Comment gère-t-elle les délais serrés ?">
+            Comment gère-t-elle les délais serrés ?
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <section id="chat-box" class="chat" aria-live="polite"></section>
+
+    <form id="chat-form" class="composer" autocomplete="off">
+      <input
+        id="user-input"
+        type="text"
+        placeholder="Ask about experience, skills, outcomes…"
+        aria-label="Your question"
+      />
+      <button type="submit" aria-label="Send">Send</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
