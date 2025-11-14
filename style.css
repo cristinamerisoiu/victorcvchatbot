@@ -82,9 +82,11 @@ body {
   align-items: center;
   background: linear-gradient(
     135deg,
-    rgba(15, 118, 110, 0.12),
-    rgba(15, 23, 42, 0.05)
+    rgba(15, 118, 110, 0.14),
+    rgba(15, 23, 42, 0.06)
   );
+  background-size: 220% 220%;
+  animation: header-gradient-shift 28s ease-in-out infinite;
 }
 
 .brand {
@@ -152,10 +154,16 @@ body {
   display: grid;
   place-items: center;
   padding: 20px;
+
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.22s ease;
 }
 
+/* use fade + pointer-events instead of display:none so we can animate */
 .help-modal.hidden {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .help-content {
@@ -165,7 +173,18 @@ body {
   max-width: 520px;
   width: 100%;
   box-shadow: 0 20px 60px rgba(15, 23, 42, 0.5);
+
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  transition: transform 0.22s ease, opacity 0.22s ease;
 }
+
+/* starting / closing state when modal is hidden */
+.help-modal.hidden .help-content {
+  transform: translateY(8px) scale(0.97);
+  opacity: 0;
+}
+
 
 .help-header {
   display: flex;
@@ -344,6 +363,18 @@ body {
     transform: translateY(0) scale(1);
   }
 }
+@keyframes header-gradient-shift {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
 /* Sample questions */
 .sample-question {
   display: inline-block;
