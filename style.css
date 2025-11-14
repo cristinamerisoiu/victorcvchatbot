@@ -376,11 +376,24 @@ body {
   color: var(--muted);
 }
 
+.composer input[type="text"] {
+  flex: 1;
+  padding: 11px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel);      /* was var(--bg) */
+  color: var(--ink);
+  outline: none;
+  font-size: 14px;
+}
+
 .composer input[type="text"]:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 1px rgba(15, 118, 110, 0.22);
-  background: #ffffff;
+  background: var(--panel);      /* was #ffffff */
+  color: var(--ink);             /* explicit, just to be safe */
 }
+
 
 .composer button {
   padding: 11px 18px;
